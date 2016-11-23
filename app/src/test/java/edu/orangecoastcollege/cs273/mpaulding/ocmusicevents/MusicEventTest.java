@@ -4,15 +4,29 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
+
+import static junit.framework.Assert.*;
 
 /**
  * Created by bijanfazeli on 11/22/16.
  */
 public class MusicEventTest {
+
+    private MusicEvent mMusicEvent;
+
     @Before
     public void setUp() throws Exception {
 
+        mMusicEvent = new MusicEvent();
+        mMusicEvent.setTitle("Test Title");
+        mMusicEvent.setDate("09102020");
+        mMusicEvent.setDay("Monday");
+        mMusicEvent.setTime("90:34");
+        mMusicEvent.setLocation("Norwalk");
+        mMusicEvent.setAddress1("10824 Tonibar st");
+        mMusicEvent.setAddress2("Norwalk, Ca 90650");
+        mMusicEvent.setImageName("BenFoldsAndAPiano");
     }
 
     @After
@@ -22,82 +36,44 @@ public class MusicEventTest {
 
     @Test
     public void getTitle() throws Exception {
-
-    }
-
-    @Test
-    public void setTitle() throws Exception {
-
+        //assertEquals("You done goofed.", "", mMusicEvent.getTitle());
+        //assertNull("Expected the title to be NULL", mMusicEvent.getTitle());
+        assertEquals("Test title", mMusicEvent.getTitle());
     }
 
     @Test
     public void getDate() throws Exception {
-
-    }
-
-    @Test
-    public void setDate() throws Exception {
-
+        assertNotNull(mMusicEvent.getDate());
     }
 
     @Test
     public void getDay() throws Exception {
-
-    }
-
-    @Test
-    public void setDay() throws Exception {
-
+        assertEquals("Saturday", mMusicEvent.getDay());
     }
 
     @Test
     public void getTime() throws Exception {
-
-    }
-
-    @Test
-    public void setTime() throws Exception {
-
+        assertEquals("10:30", mMusicEvent.getTime());
     }
 
     @Test
     public void getLocation() throws Exception {
-
-    }
-
-    @Test
-    public void setLocation() throws Exception {
-
+        assertEquals("Norwalk", mMusicEvent.getLocation());
     }
 
     @Test
     public void getAddress1() throws Exception {
-
-    }
-
-    @Test
-    public void setAddress1() throws Exception {
-
+        assertEquals("10824 Tonibar st", mMusicEvent.getAddress1());
     }
 
     @Test
     public void getAddress2() throws Exception {
-
-    }
-
-    @Test
-    public void setAddress2() throws Exception {
-
+        assertEquals("Norwalk, Ca 90650", mMusicEvent.getAddress2());
     }
 
     @Test
     public void getImageName() throws Exception {
-
-    }
-
-    @Test
-    public void setImageName() throws Exception {
-
+        assertNotNull(mMusicEvent.getImageName());
     }
 
 }
